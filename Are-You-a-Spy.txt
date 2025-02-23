@@ -1,0 +1,53 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        String input, greeting, response, ltr, letters;
+        
+        int n = Integer.parseInt(scan.nextLine());
+        
+        for(int i = 0; i < n; i++) {
+            letters = "";
+            input = scan.nextLine();
+            
+            input = input.toUpperCase();
+            for(int j = 0; j < input.length(); j++) {
+                ltr = input.substring(j, j+1);
+                int p = "|ABCDEFGHIJKLMNOPQRSTUVWXYZ".indexOf(ltr);
+                if(p >= 0) letters += ltr;
+            }
+            
+            int pos = letters.indexOf("|");
+            if (pos == -1) {
+                System.out.println("Invalid input. Missing '|' separator.");
+                continue;
+            }
+            
+            greeting = letters.substring(0, pos);
+            response = letters.substring(pos+1);
+            
+            // Check if greeting and response are the same
+            if (greeting.equals(response)) {
+                System.out.println("That's my secret contact!");
+                continue; // Skip the rest of the loop for this iteration
+            }
+            
+            boolean secret = true;
+            for(int k = 0; k < response.length(); k++) {
+                ltr = response.substring(k, k+1);
+                if(greeting.indexOf(ltr) < 0) {
+                    System.out.println("You're not a secret agent!");
+                    secret = false;
+                    break;
+                }
+            }
+            
+            if(secret) {
+                System.out.println("That's my secret contact!");
+            }
+        }
+        
+        scan.close();
+    }
+}
