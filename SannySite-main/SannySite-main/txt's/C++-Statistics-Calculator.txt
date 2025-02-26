@@ -1,0 +1,88 @@
+#include <iostream>
+using namespace std;
+
+// Global Variables
+const int arraySize = 15;
+float userData[arraySize];
+float aux;
+
+// User Named Functions
+void printArray();
+
+float medianCalculator() {
+  float median;
+  printArray();
+  if (arraySize % 2 == 0) {
+    median =
+        (userData[(arraySize - 1) / 2] + userData[((arraySize - 1) / 2) + 1]) /
+        2;
+  } else {
+    median = userData[arraySize / 2];
+  }
+  return median;
+}
+
+float meanCalculator() {
+  float mean = 0;
+  float acc = 0;
+  for (int i = 0; i < arraySize; i++) {
+    acc = acc + userData[i];
+  }
+  mean = acc / arraySize;
+  return mean;
+}
+
+void printBanner() { cout << "Statistics Calculator" << endl; }
+
+void clearScreen() { cout << "\033[2J\033[1;1H"; }
+
+void printArray() {
+  cout << "\n";
+  for (int i = 0; i < arraySize; i++) {
+    cout << " " << userData[i] << "\t\n";
+  }
+}
+
+void checkAndClear() {
+  char check;
+  cout << "\nWant to clear Screen? (Y-yes, N-no) -> ";
+  cin >> check;
+  if (check == 'Y' || check == 'y') {
+    clearScreen();
+  }
+}
+
+void bubbleSort() {
+  for (int j = 0; j < arraySize; j++) {
+    for (int i = 0; i < arraySize - 1; i++) {
+      if (userData[i] > userData[i + 1]) {
+        aux = userData[i];
+        userData[i] = userData[i + 1];
+        userData[i + 1] = aux;
+      }
+    }
+  }
+}
+
+// Main function
+int main() {
+  float mean;
+  float median;
+  printBanner();
+  cout << "Please, enter " << arraySize << " values.\n";
+  for (int i = 0; i < arraySize; i++) {
+    cout << "Value #" << i + 1 << " -> ";
+    cin >> userData[i];
+  }
+  // Now we output the content of the array
+  printArray();
+  checkAndClear();
+  // Now we output the array, sorted from least to greatest
+  bubbleSort();
+  cout << "Array sorted from least to greatest\n";
+  printArray();
+  mean = meanCalculator();
+  cout << "\nThe array's mean is " << mean << endl;
+  median = medianCalculator();
+  cout << "\nThe array's median is " << median << endl;
+}
