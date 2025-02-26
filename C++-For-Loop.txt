@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+
+int accumulator;
+int user;
+
+int main() {
+  cout << "Please enter number here->"; 
+  cin >> user;
+  accumulator = 0;
+  for(int i=1; i <= user; i++ ){
+       accumulator = accumulator + i;
+  }
+  cout << "The sum from 1 to " << user << " = " << accumulator << endl ;
+}

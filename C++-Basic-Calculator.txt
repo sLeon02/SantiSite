@@ -1,0 +1,43 @@
+
+#include <iostream> 
+#include <cmath>
+using namespace std;
+
+float a;
+float b;
+
+int main() {
+  cout << "\n";
+  cout << "Hi, this is your personal basic calculator.\n\n";
+
+  cout << "Type your first number here-> ";
+  cin >> a;
+  cout << "Now type your second number here-> ";
+  cin >> b;
+  cout << "\n\n";
+
+  cout << a << " + " << b << " = " << a + b << endl; 
+  cout << a << " - " << b << " = " << a - b << endl; 
+  cout << a << " * " << b << " = " << a * b << endl; 
+  cout << a << " / " << b << " = " << a / b << endl; cout << "\n";
+  
+  cout << a << " ^2 " " = " << a * a << endl; 
+  cout << b << " ^2 " " = " << b * b << endl; cout << "\n";
+  //pow(double base, double exponent);
+  //pow(float base, float exponent);
+  //these do the same bbut instead as a function
+  cout << a << " ^3 " " = " << a * a * a << endl; 
+  cout << b << " ^3 " " = " << b * b * b << endl; cout << "\n";
+  
+  cout << "Squared root of " << a << " = " << sqrt(a) << endl;
+	cout << "Squared root of " << b << " = " << sqrt(b) << endl; cout << "\n";
+  
+  cout << "Cubic root of " << a << " = " << cbrt(a) << endl; 
+  cout << "Cubic root of " << b << " = " << cbrt(b) << endl; cout << "\n";
+  
+  cout << a << " to the power of " << b << " = " << pow(a,b) << endl;
+  cout << b << " to the power of " << a << " = " << pow(b,a) << endl;
+  
+  
+  
+  }

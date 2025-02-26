@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Sanny Code - Hyperlink Search</title>
+  <style>
+    body {
+      background: url(https://htmlcolorcodes.com/assets/images/colors/baby-blue-color-solid-background-1920x1080.png);
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+    /* Top left home link */
+    .home-link {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      font-size: 20px;
+      text-decoration: none;
+      color: #000;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+    h1 {
+      text-align: center;
+      font-size: 100px;
+      margin-top: 40px;
+    }
+    .search-container {
+      text-align: center;
+      margin: 40px 0;
+    }
+    .search-container input[type="text"] {
+      width: 300px;
+      padding: 10px;
+      font-size: 20px;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+    }
+    .search-container button {
+      padding: 10px 20px;
+      font-size: 20px;
+      margin-left: 10px;
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .search-container button:hover {
+      background-color: #45a049;
+    }
+    .results {
+      width: 80%;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .result {
+      display: block;
+      background-color: rgba(255, 255, 255, 0.8);
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 5px;
+      font-size: 20px;
+      text-decoration: none;
+      color: #000;
+    }
+    .result:hover {
+      background-color: rgba(220, 220, 220, 0.8);
+    }
+  </style>
+</head>
+<body>
+  <!-- Top left home link -->
+  <a class="home-link" href="https://sleon02.github.io/SannySite/">Home</a>
+  
+  <h1>Sanny Code</h1>
+  
+  <!-- Centered search bar -->
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Enter search words...">
+    <button onclick="doSearch()">Search</button>
+  </div>
+  
+  <!-- Hyperlink results container -->
+  <div class="results" id="results">
+ 
+
+
+   <a class="result" href="https://raw.githubusercontent.com/sLeon02/SannySite/refs/heads/main/Java-Are-You-a-Spy.txt" target="_blank">
+      Java Are you a spy? - Checks if statment 2 contains all the characters in statment 1
+    </a>
+  
+
+  <a class="result" href="https://raw.githubusercontent.com/sLeon02/SannySite/refs/heads/main/Java-Scrabble-Scorer.txt" target="_blank">
+     Java Scrabble Scorer - Uses Map to assign values to letters
+    </a>
+ 
+  <a class="result" href="https://raw.githubusercontent.com/sLeon02/SannySite/refs/heads/main/C++-Input-Output.txt" target="_blank">
+      C++ Input Output - Simple input output
+    </a>
+
+  <a class="result" href="https://raw.githubusercontent.com/sLeon02/SannySite/refs/heads/main/C++-Prime-Number-Check.txt" target="_blank">
+      C++ Prime Number Check - Checks if the input number is prime or composite
+    </a>
+
+  <a class="result" href="https://raw.githubusercontent.com/sLeon02/SannySite/refs/heads/main/C++-Divisible-By-2-3-5-7.txt" target="_blank">
+      C++ Divisible by 2, 3, 5, or 7 - Checks if a number is divisible by the first four primes
+    </a>
+
+  <a class="result" href="https://raw.githubusercontent.com/sLeon02/SannySite/refs/heads/main/C++-For-Loop.txt" target="_blank">
+      C++ For Loop - Uses a For Loop to all numbers from 1 to the user input, inclusive
+    </a>
+
+  <a class="result" href="https://raw.githubusercontent.com/sLeon02/SannySite/refs/heads/main/C++-Basic-Calculator.txt" target="_blank">
+      C++ Basic Calculator - Uses the cmath library to perform mathematical operations
+    </a>
+
+  <a class="result" href="https://raw.githubusercontent.com/sLeon02/SannySite/refs/heads/main/C++-Statistics-Calculator.txt" target="_blank">
+      C++ Statistics Calculator - Uses bubble sort and calculates the mean and median of an array of numbers
+    </a>
+
+ </div>
+  
+  <script>
+    function doSearch() {
+      // Retrieve the query, convert to lowercase, and split into words.
+      const query = document.getElementById('searchInput').value.toLowerCase().trim();
+      const queryWords = query.split(/\s+/);
+      
+      // Get all hyperlink result elements.
+      const results = document.getElementsByClassName('result');
+      
+      // Loop through each hyperlink and check if it includes all search words.
+      for (let i = 0; i < results.length; i++) {
+        const text = results[i].textContent.toLowerCase();
+        let show = true;
+        // If any query word is missing from the hyperlink text, hide the link.
+        for (let j = 0; j < queryWords.length; j++) {
+          if (text.indexOf(queryWords[j]) === -1) {
+            show = false;
+            break;
+          }
+        }
+        results[i].style.display = show ? 'block' : 'none';
+      }
+    }
+  </script>
+</body>
+</html>
