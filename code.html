@@ -1,25 +1,67 @@
 <!DOCTYPE html>
 <html>
-<style>
-body{
-background:url(https://htmlcolorcodes.com/assets/images/colors/baby-blue-color-solid-background-1920x1080.png);
-}
-h1 {
-  text-align: center;
-  font-size:100px;
-}
-p {
-  font-size:25px;
-  text-align: center;
-}
-h2 {
-  font-size:50px;
-  text-align:center;
-}
-</style>
-<h1>Sanny Code</h1>
-<p>
-<a href="https://raw.githubusercontent.com/sLeon02/SannySite/refs/heads/main/Are-You-a-Spy.txt" target="_blank">Are you a spy?</a>
-</p>
-<h2><a href="index.html">Back to Menu</a></h2>
+<head>
+  <meta charset="UTF-8">
+  <title>Sanny Code</title>
+  <style>
+    body {
+      background: url(https://htmlcolorcodes.com/assets/images/colors/baby-blue-color-solid-background-1920x1080.png);
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      text-align: center;
+      font-size: 100px;
+    }
+    p {
+      font-size: 25px;
+      text-align: center;
+    }
+    h2 {
+      font-size: 50px;
+      text-align: center;
+    }
+    /* Style for the search bar container */
+    .search-container {
+      text-align: center;
+      margin: 40px 0;
+    }
+    .search-container input[type="text"] {
+      width: 300px;
+      padding: 10px;
+      font-size: 20px;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+    }
+    .search-container button {
+      padding: 10px 20px;
+      font-size: 20px;
+      margin-left: 10px;
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .search-container button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1>Sanny Code</h1>
+  
+  <!-- Search Bar -->
+  <div class="search-container">
+    <form action="search.html" method="get">
+      <input type="text" name="query" placeholder="Search...">
+      <button type="submit">Search</button>
+    </form>
+  </div>
+  
+  <p>
+    <a href="https://raw.githubusercontent.com/sLeon02/SannySite/refs/heads/main/Are-You-a-Spy.txt" target="_blank">Are you a spy?</a>
+  </p>
+  <h2><a href="index.html">Back to Menu</a></h2>
+</body>
 </html>
