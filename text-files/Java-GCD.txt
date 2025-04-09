@@ -1,0 +1,44 @@
+/*
+Period 6 
+Santiago Leon 
+GCD
+Turn off interactive mode, type set number of test cases then set numbers to find the gcd in the stdin inputs
+ex.
+2-------# of test cases
+3,3-----Test case 1
+26,53---Test case 2
+*/
+
+import java.util.*;
+
+public class MyClass {
+  public static void main(String args[]) {
+    Scanner scan = new Scanner(System.in);
+    int t = scan.nextInt();
+    scan.nextLine();
+    for(int i = 0; i < t; i++){
+        String str = scan.nextLine();
+        String [] Astr = str.split(",");
+        int num1 = Integer.parseInt(Astr[0]);
+        int num2 = Integer.parseInt(Astr[1]);
+        int s;
+        int l;
+        if(num1>num2){
+            l = num1;
+            s = num2;
+        }else{
+            l = num2;
+            s = num1;
+        }
+        int x = l%s;
+        int c;
+        while(s!=0){
+            x = l%s; 
+            c = s;
+            s = x;
+            x = c;
+        }
+        System.out.println(x);
+    }
+  }
+}
