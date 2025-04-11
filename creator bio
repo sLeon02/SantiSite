@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Santi Site- Hyperlink Search</title>
+  <style>
+    body {
+      background: url(https://htmlcolorcodes.com/assets/images/colors/baby-blue-color-solid-background-1920x1080.png);
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      text-align: center;
+      font-size: 100px;
+      margin-top: 40px;
+    }
+    .sections {
+      width: 60%;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .section {
+      display: block;
+      background-color: rgba(255, 255, 255, 0.8);
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 5px;
+      font-size: 50px;
+      text-decoration: none;
+      color: #000;
+    }
+    .section:hover {
+      background-color: rgba(220, 220, 220, 0.8);
+    }
+  </style>
+</head>
+<body>
+<h1>Creator Bio</h1>
+<div class ="sections" id="sections">
+<p class = "section" >My name is Santiago Leon and I am 14. Some hobbies of mine are playing video games, practicing math in FAMAT and AMC, studying physics for science bowl, and coding.</p>
+<div>
+</body>
+</html>
